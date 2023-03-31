@@ -43,7 +43,7 @@ btnClear.addEventListener("click", function(event){
                         "totalEnProductos"  : ${totalEnProductos},
                         "costoTotal"        : ${costoTotal.toFixed(2)}}`;
         localStorage.setItem("resumen", resumen);
-
+    
     // localStorage.setItem("contadorProductos",contador);
     // localStorage.setItem("totalEnProductos", totalEnProductos);
     // localStorage.setItem("costoTotal", costoTotal.toFixed(2));    
@@ -164,6 +164,20 @@ window.addEventListener("load", function(event){
         localStorage.setItem("resumen", resumen);
     }
     let res = JSON.parse(localStorage.getItem("resumen"));
+
+    if (localStorage.getItem("datos")!=null) {
+        datos = JSON.parse(this.localStorage.getItem("datos"));
+
+        datos.forEach(r => {
+            let row = `<tr>
+                        <th>${r.id}</th>
+                        <td>${r.nombre}</td>
+                        <td>${r.cantidad}</td>
+                        <td>$ ${r.precio}</td>
+                    </tr>`;
+                    cuerpoTabla[0].insertAdjacentHTML("beforeend", row); 
+        });
+    }// Se genera la tabla ya guardada con los valores
 
 
     //Metodo Json
