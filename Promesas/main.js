@@ -243,7 +243,7 @@ let producto =
 ];
 
 let cardtitle = document.getElementsByClassName("card-title");
-let cardimgtop = document.getElementsByClassName("card-img-top");
+let cardimgtop = document.getElementsByClassName("card");
 let cardtext = document.getElementsByClassName("card-text");
 
 let imagen = "";
@@ -252,12 +252,11 @@ let descrip = "";
 
 for(let i=0;i<=19;i++){
     imagen = producto[i].image;
-    cardimgtop[i].insertAdjacentHTML('beforeend', `<img src="${imagen}" class="card-img-top" alt="...">`);
+    cardimgtop[i].insertAdjacentHTML('beforebegin', `<img src="${imagen}" class="card-img-top" alt="..."  height="500" >`);
     titulo = producto[i].title;
     cardtitle[i].insertAdjacentHTML('beforeend', titulo);
     descrip = producto[i].description;
     cardtext[i].insertAdjacentHTML('beforeend', descrip);
-    
 }
     
 
