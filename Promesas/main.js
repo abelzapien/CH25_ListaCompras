@@ -286,7 +286,7 @@ function getProducto(){ //con fetch
       )//then json
       .catch((err) => {
          console.error("Error en el formato de la respuesta " + err.message);
-      })
+      });//catch json
    }//respuesta
    )//then
    .catch((error) => {
@@ -294,9 +294,9 @@ function getProducto(){ //con fetch
    });//catch promesa
 }//getProducto
 
-getProducto()
+getProducto();
             // .then((prod)=>console.log(prod)) //resuelto
-            // .catch((err)=>console.log(err.message)) //cancelado
+            // .catch((err)=>console.log(err.message)); //cancelado
 
 let cardtitle = document.getElementsByClassName("card-title");
 let cardimgtop = document.getElementsByClassName("card");
@@ -315,3 +315,4 @@ for(let i=0;i<=19;i++){
     cardtitle[i].insertAdjacentHTML('beforeend', titulo);
     cardtext[i].insertAdjacentHTML('beforeend', descrip);
 }}
+function creatCards()
